@@ -34,6 +34,38 @@ class CoinController {
         
         print(finalURL)
         
+        URLSession.shared.dataTask(with: finalURL){ coinData, _, error in
+            if let error = error {
+                print("There was an error:\(error.localizedDescription)")
+                completion(false)
+            }
+            
+            guard let data = coinData else {completion(false)
+                return}
+            do {
+                /// as? is how you "optionally type cast"
+                if let topLevelArrayOfCoinDictionaries = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String:String]] {
+                    for coinDictionary in topLevelArrayOfCoinDictionaries {
+                        /// coinDictionary "subscripted" with key "id", etc.
+                        if let id = coinDictionary["id"],
+                           let symbol = coinDictionary["symbol"],
+                           let name = coinDictionary["name"]{
+                            let parsedCoin = Coin(id: id, symbol: symbol, name: name)
+                            coins.append(parsedCoin)
+                        }
+                    }
+                    
+                    completion(true)
+                }
+                
+            } catch {
+                print("Error in Do/Try/Catch:\(error.localizedDescription)")
+                completion(false)
+                
+            }
+            
+        }.resume()
+        
     }
     
     
@@ -44,4 +76,4 @@ class CoinController {
     
     // MARK: - Persistence
     
-}
+} // End of Class
