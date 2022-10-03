@@ -27,9 +27,11 @@ class CoinController {
     // Create: Coins will be fetched from data from an API rather than manually created for the user
     /// Completion handler needed because the fetch function is responsible for hitting an API Endpoint. We chose Boolean as our closure completion because its success will tell us whether everything worked (true) or if there was an error (false). One parameter named completion that is marked as @escaping and takes in a bool value and doesn't return anything.
     static func fetchCoins(completion: @escaping (Bool) -> Void) {
-        guard var baseURL = baseURLString else {return completion(false)}
-        let coinsURL = baseURL.append(keyCoinsComponent)
-        let finalURL = coinsURL.append(keyListComponent)
+        guard let baseURL = URL(string: baseURLString) else {return completion(false)}
+        
+        let coinsURL = baseURL.appendingPathComponent(keyCoinsComponent)
+        let finalURL = coinsURL.appendingPathComponent(keyListComponent)
+        
         print(finalURL)
         
     }
