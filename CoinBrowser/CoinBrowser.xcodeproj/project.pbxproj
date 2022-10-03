@@ -62,9 +62,8 @@
 			children = (
 				41078B9F274DB4E0003BD4FA /* Storyboards */,
 				41078BA0274DB4EE003BD4FA /* Supporting Files */,
-				EBF402BC28EB508B00A91EC5 /* CoinListTableViewController.swift */,
-				EBF402BE28EB54DE00A91EC5 /* Coin.swift */,
-				EBF402C028EB561D00A91EC5 /* CoinController.swift */,
+				EBF402C228EB8F4100A91EC5 /* Controllers */,
+				EBF402C428EB8F5D00A91EC5 /* Model */,
 			);
 			path = CoinBrowser;
 			sourceTree = "<group>";
@@ -87,6 +86,39 @@
 				41078B99274DB4D4003BD4FA /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBF402C228EB8F4100A91EC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EBF402C528EB8F6900A91EC5 /* Model Controller */,
+				EBF402C328EB8F4E00A91EC5 /* View Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EBF402C328EB8F4E00A91EC5 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EBF402BC28EB508B00A91EC5 /* CoinListTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EBF402C428EB8F5D00A91EC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EBF402BE28EB54DE00A91EC5 /* Coin.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBF402C528EB8F6900A91EC5 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBF402C028EB561D00A91EC5 /* CoinController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
