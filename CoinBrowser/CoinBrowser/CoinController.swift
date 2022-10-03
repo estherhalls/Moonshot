@@ -11,7 +11,7 @@ class CoinController {
     /// not needed because singleton allows you to restrict the initialization of a single class to happen only once to ensure the properties and collections are always the same set of data. When pulling from an API, every time data is fetched it will replace whatever is in the SOT and we do not need a singleton. Using a singleton here would be SINGLETON ABUSE
     
     // MARK: - SOT
-    private static var coins: [Coin] = []
+    static var coins: [Coin] = []
     
     // MARK: - URL
 //    private var finalURL: URL? {
