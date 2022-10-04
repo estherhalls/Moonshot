@@ -38,5 +38,4 @@ class CoinListTableViewController: UITableViewController {
         return cell
     }
 
-
 } // End of Class

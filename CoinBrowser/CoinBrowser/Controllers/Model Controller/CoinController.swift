@@ -14,9 +14,7 @@ class CoinController {
     static var coins: [Coin] = []
     
     // MARK: - URL
-//    private var finalURL: URL? {
-//
-//}
+
     private static let baseURLString = "https://api.coingecko.com/api/v3"
     // First URL Component
     private static let keyCoinsComponent = "coins"
@@ -44,7 +42,7 @@ class CoinController {
                 return}
             do {
                 /// as? is how you "optionally type cast"
-                if let topLevelArrayOfCoinDictionaries = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String:String]] {
+                if let topLevelArrayOfCoinDictionaries = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [[String:String]] {
                     for coinDictionary in topLevelArrayOfCoinDictionaries {
                         /// coinDictionary "subscripted" with key "id", etc.
                         if let id = coinDictionary["id"],
